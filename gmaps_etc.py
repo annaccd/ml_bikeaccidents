@@ -119,7 +119,7 @@ bike_locs2 = pd.read_pickle('data/nextbike_3.pickle')
 bike_locs = pd.DataFrame.from_records([{'id': i[0], 'time': i[1], 'lat': i[2], 'long': i[3]} for key in bike_locs2.keys() for i in bike_locs2[key]])
 
 
-api_key="AIzaSyCahsuk_JzN_mvkD29RNTIcmfknKazfYwU"
+api_key=''
 gmaps = googlemaps.Client(key=api_key)
 
 bike_locs = bike_locs['time' != ]
