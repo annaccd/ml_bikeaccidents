@@ -64,8 +64,7 @@ plt.boxplot(results)
 ax.set_xticklabels(names)
 plt.show()
 
-
-
+### grid search
 
 grid_pars = { 
     'max_depth': [2,4,6,8,10,12], 
@@ -93,24 +92,21 @@ grid_df = pd.DataFrame(grid.cv_results_)
 
 grid_df
 
+plot_search_results(grid)
 
-
-# apply to test set
+# construct best model, apply to test set
 
 clf = DecisionTreeClassifier(criterion='gini', max_depth=6, min_samples_leaf=3, min_samples_split=9)
 clf.fit(X_train, y_train)
 
 y_preds = clf.predict(X_test)
 
-import os
-os.environ["PATH"] += os.pathsep + "C:/Program Files/Graphviz/bin"
-
 
 viz = dtreeviz(clf, X_test, y_test,
                target_name='target',
                feature_names=X_test.columns)
 
-recall_score(y_test, y_preds)
+
 
 textrep = tree.export_text(clf)
 
@@ -118,8 +114,6 @@ confusion_matrix(y_test, y_preds)
 
 
 plot_confusion_matrix(clf, X_test, y_test)
-
-plot_search_results
 
 
 plot_learning_curve(estimator=clf, 
@@ -132,18 +126,6 @@ plt.show()
 
 feat_importances = pd.Series(clf.feature_importances_, index=X_train.columns)
 feat_importances.nlargest(10).plot(kind='barh')
-
-
-fpr, tpr, _ = roc_curve(y_test, y_preds)
-
-
-plt.clf()
-plt.plot(fpr, tpr)
-plt.xlabel('FPR')
-plt.ylabel('TPR')
-plt.title('ROC curve')
-plt.show()
-
 
 
 y_proba = clf.predict_proba(X_test)
@@ -166,7 +148,7 @@ skplt.metrics.plot_calibration_curve(y_test, probas_list = probas_list, clf_name
 
 
 
-
+#### subset of center districts ####
 df = pd.read_csv('data/traffic_df2.csv')
 
 sns.displot(df, y='BEZIRK', rug=True, rug_kws={'height':.01, 'expand_margins': True})
