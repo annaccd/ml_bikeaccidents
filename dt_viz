@@ -1,0 +1,575 @@
+
+digraph G {
+    splines=line;
+    nodesep=0.1;
+    ranksep=.2;
+    rankdir=TD;
+    margin=0.0;
+    
+    node [margin="0.03" penwidth="0.5" width=.1, height=.1];
+    edge [arrowsize=.4 penwidth="0.3"]
+
+    node6 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node6_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node9 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node9_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node5 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node5_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node4 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node4_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node2 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node2_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node16 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node16_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node19 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node19_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node15 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node15_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node23 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node23_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node26 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node26_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node22 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node22_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node14 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node14_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node31 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node31_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node34 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node34_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node30 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node30_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node38 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node38_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node37 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node37_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node29 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node29_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node13 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node13_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node1 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node1_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node45 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node45_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node43 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node43_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node52 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node52_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node50 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node50_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node48 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node48_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node42 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node42_14504.svg"/></td>
+            </tr>
+            </table>>]
+	node0 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="C:\Users\julia\AppData\Local\Temp/node0_14504.svg"/></td>
+            </tr>
+            </table>>]
+    node6 -> leaf7 [penwidth=0.3 color="#444443" label=<>]
+	node6 -> leaf8 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf7 -> leaf8 [style=invis]
+            }
+            
+	node9 -> leaf10 [penwidth=0.3 color="#444443" label=<>]
+	node9 -> leaf11 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf10 -> leaf11 [style=invis]
+            }
+            
+	node5 -> node6 [penwidth=0.3 color="#444443" label=<>]
+	node5 -> node9 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                node6 -> node9 [style=invis]
+            }
+            
+	node4 -> node5 [penwidth=0.3 color="#444443" label=<>]
+	node4 -> leaf12 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                node5 -> leaf12 [style=invis]
+            }
+            
+	node2 -> leaf3 [penwidth=0.3 color="#444443" label=<>]
+	node2 -> node4 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf3 -> node4 [style=invis]
+            }
+            
+	node16 -> leaf17 [penwidth=0.3 color="#444443" label=<>]
+	node16 -> leaf18 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf17 -> leaf18 [style=invis]
+            }
+            
+	node19 -> leaf20 [penwidth=0.3 color="#444443" label=<>]
+	node19 -> leaf21 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf20 -> leaf21 [style=invis]
+            }
+            
+	node15 -> node16 [penwidth=0.3 color="#444443" label=<>]
+	node15 -> node19 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                node16 -> node19 [style=invis]
+            }
+            
+	node23 -> leaf24 [penwidth=0.3 color="#444443" label=<>]
+	node23 -> leaf25 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf24 -> leaf25 [style=invis]
+            }
+            
+	node26 -> leaf27 [penwidth=0.3 color="#444443" label=<>]
+	node26 -> leaf28 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf27 -> leaf28 [style=invis]
+            }
+            
+	node22 -> node23 [penwidth=0.3 color="#444443" label=<>]
+	node22 -> node26 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                node23 -> node26 [style=invis]
+            }
+            
+	node14 -> node15 [penwidth=0.3 color="#444443" label=<>]
+	node14 -> node22 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                node15 -> node22 [style=invis]
+            }
+            
+	node31 -> leaf32 [penwidth=0.3 color="#444443" label=<>]
+	node31 -> leaf33 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf32 -> leaf33 [style=invis]
+            }
+            
+	node34 -> leaf35 [penwidth=0.3 color="#444443" label=<>]
+	node34 -> leaf36 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf35 -> leaf36 [style=invis]
+            }
+            
+	node30 -> node31 [penwidth=0.3 color="#444443" label=<>]
+	node30 -> node34 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                node31 -> node34 [style=invis]
+            }
+            
+	node38 -> leaf39 [penwidth=0.3 color="#444443" label=<>]
+	node38 -> leaf40 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf39 -> leaf40 [style=invis]
+            }
+            
+	node37 -> node38 [penwidth=0.3 color="#444443" label=<>]
+	node37 -> leaf41 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                node38 -> leaf41 [style=invis]
+            }
+            
+	node29 -> node30 [penwidth=0.3 color="#444443" label=<>]
+	node29 -> node37 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                node30 -> node37 [style=invis]
+            }
+            
+	node13 -> node14 [penwidth=0.3 color="#444443" label=<>]
+	node13 -> node29 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                node14 -> node29 [style=invis]
+            }
+            
+	node1 -> node2 [penwidth=0.3 color="#444443" label=<>]
+	node1 -> node13 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                node2 -> node13 [style=invis]
+            }
+            
+	node45 -> leaf46 [penwidth=0.3 color="#444443" label=<>]
+	node45 -> leaf47 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf46 -> leaf47 [style=invis]
+            }
+            
+	node43 -> leaf44 [penwidth=0.3 color="#444443" label=<>]
+	node43 -> node45 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf44 -> node45 [style=invis]
+            }
+            
+	node52 -> leaf53 [penwidth=0.3 color="#444443" label=<>]
+	node52 -> leaf54 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf53 -> leaf54 [style=invis]
+            }
+            
+	node50 -> leaf51 [penwidth=0.3 color="#444443" label=<>]
+	node50 -> node52 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf51 -> node52 [style=invis]
+            }
+            
+	node48 -> leaf49 [penwidth=0.3 color="#444443" label=<>]
+	node48 -> node50 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                leaf49 -> node50 [style=invis]
+            }
+            
+	node42 -> node43 [penwidth=0.3 color="#444443" label=<>]
+	node42 -> node48 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                node43 -> node48 [style=invis]
+            }
+            
+	node0 -> node1 [penwidth=0.3 color="#444443" label=<&le;>]
+	node0 -> node42 [penwidth=0.3 color="#444443" label=<&gt;>]
+	
+            {
+                rank=same;
+                node1 -> node42 [style=invis]
+            }
+            
+    leaf3 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf3_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf7 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf7_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf8 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf8_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf10 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf10_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf11 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf11_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf12 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf12_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf17 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf17_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf18 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf18_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf20 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf20_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf21 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf21_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf24 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf24_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf25 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf25_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf27 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf27_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf28 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf28_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf32 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf32_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf33 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf33_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf35 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf35_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf36 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf36_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf39 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf39_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf40 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf40_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf41 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf41_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf44 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf44_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf46 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf46_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf47 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf47_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf49 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf49_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf51 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf51_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf53 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf53_14504.svg"/></td>
+        </tr>
+        </table>>]
+	leaf54 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="C:\Users\julia\AppData\Local\Temp/leaf54_14504.svg"/></td>
+        </tr>
+        </table>>]
+
+    
+            subgraph cluster_legend {
+                style=invis;
+                legend [penwidth="0" margin="0" shape=box margin="0.03" width=.1, height=.1 label=<
+                
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td border="0" cellspacing="0" cellpadding="0"><img src="C:\Users\julia\AppData\Local\Temp/legend_14504.svg"/></td>
+            </tr>
+        </table>
+        
+                >]
+            }
+            
+    
+}
+    

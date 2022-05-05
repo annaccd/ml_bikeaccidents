@@ -6,7 +6,7 @@ import shapely as shp
 import geopandas as gpd
 import os
 
-
+# read in roads
 roads = pd.read_csv("roads_with_accs_and_traffic.csv")
 roads['geometry'] = roads['geometry'].apply(shp.wkt.loads)
 roads = gpd.GeoDataFrame(roads, crs='epsg:4326')
@@ -66,10 +66,8 @@ for i, row in unique_mlocs.iterrows():
 
 unique_mlocs = unique_mlocs.merge(roads, on='geometry_wkt')
 
-
-
 unique_mlocs['scale_loc'] = unique_mlocs['day_sum_x']/unique_mlocs['traffic']*unique_mlocs['share']
-
+unique_mlocs['scale'] = unique_mlocs.scale_loc*unique_mlocs.scale_m_tp
 
 trips_df = pd.read_csv("trips_by_dist.csv")
 trips_df['geometry'] = trips_df['geometry'].apply(shp.wkt.loads)
@@ -77,7 +75,7 @@ trips_df = gpd.GeoDataFrame(trips_df, crs='epsg:4326')
 
 trips_df['geometry_wkt'] = [i.to_wkt() for i in trips_df['geometry']]
 
-trips_dist = trips_df.groupby(['OTEIL', 'Month', 'time_p']).agg({'directions': 'count'}).reset_index().rename(columns={'directions':'traffic'})
+trips_dist = trips_df.groupby(['OTEIL', 'Month', 'time_p']).agg({'directions': 'count'}).fillna(0).reset_index().rename(columns={'directions':'traffic'})
 
 district_shp = gpd.read_file('lor_ortsteile.geojson')
 
@@ -91,7 +89,6 @@ trips_dist = gpd.GeoDataFrame(trips_dist, crs='epsg:4326')
 coord_m = gpd.GeoDataFrame(coord_m, crs='epsg:4326')
 coord_m['geometry_wkt'] = [i.to_wkt() for i in coord_m['geometry']]
 
-tri = gpd.sjoin(trips_dist, coord_m, op='intersects', how='left')
 
 trips_dist['m_point'] = ''
 for i, row in trips_dist.iterrows():
@@ -101,23 +98,49 @@ for i, row in trips_dist.iterrows():
 
 ### based on the assigned m_point now assign values
 
+df_list=[]
 for d in trips_dist.OTEIL.unique():
-    for z in trips_dist.Zählstelle.unique():
-        nearest = min(coord_m['geometry'], key=)
-        for m in unique_mlocs.Month.unique():
-            for t in unique_mlocs.time_p.unique():
-            [{'district': d, 'm_point': z, 'month': m, 'time_p' : t, 'traffic': }] 
+    z = trips_dist[trips_dist.OTEIL == d]['m_point'].iloc[0]
+    for m in unique_mlocs.Month.unique():
+        for t in unique_mlocs.time_p.unique():
+            if len(trips_dist.loc[(trips_dist.OTEIL==d) & (trips_dist.m_point==z) & (trips_dist.time_p==t) ,'traffic']) >= 1:
+                nb_traf = trips_dist.loc[(trips_dist.OTEIL==d) & (trips_dist.m_point==z) & (trips_dist.time_p==t) ,'traffic'].iloc[0]
+            else:
+                nb_traf = 0
+            scale = unique_mlocs.loc[(unique_mlocs.Zählstelle==z) & (unique_mlocs.Month==m) & (unique_mlocs.time_p==t) ,'scale'].iloc[0]
+            traffic_est = nb_traf*scale
+            df_list.append({'district': d, 'm_point': z, 'month': m, 'time_p' : t, 'traffic': traffic_est})
 
-for point in unique_mlocs['center']:
-    x, y = waypoint['lng'], waypoint['lat']
-    point = shp.geometry.Point(x, y)   
-    mini = min(roads['geometry'], key=point.distance)
-    roads.loc[roads['geometry_wkt'] == mini.to_wkt(),['traffic']] +=1
-    print(f'waypoint {count} of {len(list(waypoints_l.keys()))}')
+traf_df = pd.DataFrame(df_list)
+
+bike_accs = pd.read_csv('data/bike_accsidents1820.csv')
+
+bike_accs['geometry'] = [shp.geometry.Point(x, y) for x, y in zip(bike_accs['XGCSWGS84'], bike_accs['YGCSWGS84'])]
+
+bike_accs = gpd.GeoDataFrame(bike_accs)
+bike_accs_dist = gpd.sjoin(bike_accs, district_shp, how = 'inner', op='intersects')
+
+bike_accs_dist[['UJAHR', 'UMONAT', 'UWOCHENTAG', 'USTUNDE']] = bike_accs_dist[['UJAHR', 'UMONAT', 'UWOCHENTAG', 'USTUNDE']].apply(pd.to_numeric)
+
+weekday_dic = {1:6, 2:0, 3:1, 4:2, 5:3, 6:4, 7:5}
+bike_accs_dist['UWOCHENTAG'] = [weekday_dic[i] for i in bike_accs_dist['UWOCHENTAG']]
 
 
-for i, row in trips_dist.iterrows():
-    for m in 
+b = [0,6,12,18,24]
+l = ['Night', 'Morning', 'Afternoon','Evening']
+bike_accs_dist['time_p'] = pd.cut(bike_accs_dist['USTUNDE'], bins=b, labels=l, include_lowest=True)
 
 
+bike_accs_gp = bike_accs_dist.groupby(['OTEIL', 'UMONAT', 'time_p']).agg({'ULAND': 'count'}).fillna(0).reset_index().rename(columns={'ULAND':'accidents'})
+bike_accs_gp.rename(columns={'UMONAT':'month', 'OTEIL':'district'}, inplace=True)
+traf_df = traf_df.merge(bike_accs_gp, how= 'left', on=['district', 'time_p', 'month'])
 
+# cant be more accidents than trips
+traf_df = traf_df[(traf_df['accidents'] < traf_df['traffic'])]
+
+traf_df['prob'] = traf_df.accidents/traf_df.traffic
+
+traf_df = traf_df.merge(district_shp[['OTEIL', 'FLAECHE_HA', 'BEZIRK']], left_on='district', right_on='OTEIL')
+
+
+traf_df.drop(columns=['OTEIL']).rename(columns={'FLAECHE_HA_x':'FLAECHE'}).to_csv('data/traffic_df2.csv')
