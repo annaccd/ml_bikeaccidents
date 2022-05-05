@@ -13,23 +13,6 @@ import numpy as np
 
 roads = gpd.read_file("data/xn--Straennetz_-_Berlin-otb.geojson")
 roads['geometry_wkt'] = [i.to_wkt() for i in roads['geometry']]
-dir(roads['geometry'].iloc[0])
-
-
-roads['geometry'].iloc[0].contains(shp.geometry.Point(52.63874819500006, 13.29229461800003))
-
-print(roads['geometry'].iloc[0])
-
-point = shp.geometry.Point(13.478324, 52.487493)
-
-roads.head()
-
-mini = min(roads['geometry'], key=point.distance)
-
-print(mini)
-
-
-[print(i) for i in roads if i['geometry'].equals(mini)]
 
 
 years = ['2016', '2017', '2018', '2019', '2020']
@@ -81,7 +64,6 @@ weekday_dic = {1:6, 2:0, 3:1, 4:2, 5:3, 6:4, 7:5}
 bike_accs['UWOCHENTAG'] = [weekday_dic[i] for i in bike_accs['UWOCHENTAG']]
 
 
-
 bike_accs['geometry_wkt'] = ''
 bike_accs.reset_index(inplace=True)
 for i, row in bike_accs.iterrows():
@@ -119,7 +101,7 @@ bike_locs2 = pd.read_pickle('data/nextbike_3.pickle')
 bike_locs = pd.DataFrame.from_records([{'id': i[0], 'time': i[1], 'lat': i[2], 'long': i[3]} for key in bike_locs2.keys() for i in bike_locs2[key]])
 
 
-api_key=''
+api_key=""
 gmaps = googlemaps.Client(key=api_key)
 
 bike_locs = bike_locs['time' != ]
@@ -144,20 +126,6 @@ with open('bike_trips2.pickle', 'wb') as handle:
  # bike_trips = pd.read_pickle('bike_trips.pickle')
 
 
-{'I': 'big_road',
- 'II': 'super_road',
- 'III': 'local road',
- 'IV': 'compl_road',
- 'V': 'no_StEP',
- '0': 'other'
- }
-
-
-
-
-accs_16 = gpd.read_file("C:/Users/julia/Downloads/2016_accs/Unfaelle_2016_LinRef.shp")
-
-
 for key in list(bike_trips.keys()):
     poly=polyline.decode(bike_trips[key]['directions'][0]['overview_polyline']['points'])
     time=bike_trips[key]['time']
@@ -171,10 +139,6 @@ for key in list(bike_trips.keys()):
         
 
 
-
-list(bike_trips.keys())[4000]
-### proper waypoints list!
-### polyline!!
 waypoints_l = {}
 
 for i_key in list(bike_trips.keys()):
@@ -210,30 +174,9 @@ for trip in waypoints_l.keys():
 
 roads.to_csv("roads_with_accs_and_traffic.csv")
 
-# check whether correct order of lat and long in point assignment - how was it done in the code before?
 
 roads.loc[roads['geometry_wkt'] == mini.to_wkt()]['traffic']
 
-
-###### compute yearly trend
-
-
-list(set([(y, x) for x, y in zip(measure_locs['Breitengrad'], measure_locs['Längengrad'])]))
-
-
-count=0
-roads['traffic'] = ([0] * len(roads))
-for trip in waypoints_l.keys():
-    count += 1
-    for waypoint in waypoints_l[trip]:
-        x, y = waypoint['lng'], waypoint['lat']
-        point = shp.geometry.Point(x, y)   
-        mini = min(roads['geometry'], key=point.distance)
-        roads.loc[roads['geometry_wkt'] == mini.to_wkt(),['traffic']] +=1
-    print(f'waypoint {count} of {len(list(waypoints_l.keys()))}')
-
-
-measured_traf.drop_duplicates(['Date', 'Zählstelle', ''])
 
 
 
@@ -306,6 +249,11 @@ trips_df = gpd.GeoDataFrame(df_list, crs={'init':'epsg:4326'})
 trips_df['Month'] = trips_df.time.dt.month
 trips_df['Weekday'] = trips_df.time.dt.weekday
 trips_df['hour'] = trips_df.time.dt.hour
+trips_df['day'] = trips_df.time.dt.day
+
+
+sns.countplot(y="BEZIRK", data=trips_df, order = trips_df['BEZIRK'].value_counts().index)
+
 
 b = [0,6,12,18,24]
 l = ['Night', 'Morning', 'Afternoon','Evening']
@@ -315,18 +263,19 @@ trips_df['wday'] = ['weekday' if i < 5 else 'weekend' for i in trips_df['Weekday
 district_shp = gpd.read_file('lor_ortsteile.geojson')
 trips_df['geometry'] = gpd.GeoSeries(trips_df['directions'])
 
+trips_df.drop(columns=['index_right'], inplace=True)
 trips_df = gpd.sjoin(trips_df, district_shp, how = 'left', op='intersects')
+trips_df['BEZIRK'] = trips_df.BEZIRK.astype('category')
 
 trips_df.to_csv('trips_by_dist.csv')
 
 
 trips_df.groupby(['OTEIL', 'Month', 'time_p']).agg({'directions': 'count'})
 
-trips_df
 
 
 
-
+########################################### not relevant ###########################################
 line_df = gpd.GeoDataFrame(crs={'init':'epsg:4326'})
 line_df['geometry'] = gpd.GeoSeries(line_list)
 line_df['traffic'] = [1] * len(line_list)
@@ -334,28 +283,6 @@ line_df['traffic'] = [1] * len(line_list)
 line_df['geometry'] = line_df['geometry'].to_crs({'init':'epsg:4326'})
 df_join = gpd.sjoin(line_df, roads, how = 'left', op='intersects')
 
-
-
-def count_accs(trip):
-    poly = polyline.decode(trip['directions'][0]['overview_polyline']['points'])
-    time = trip['time']
-    xyz_list = []
-    for i in poly: 
-        point = shp.geometry.Point(i[1], i[0])
-        mini = min(roads['geometry'], key=point.distance)
-        if roads.loc[roads['geometry_wkt'] == mini.to_wkt()]['ELEM_NR'].iloc[0] not in xyz_list:
-            xyz_list.append(roads.loc[roads['geometry_wkt'] == mini.to_wkt()]['ELEM_NR'].iloc[0])
-            roads.loc[roads['geometry_wkt'] == mini.to_wkt(),['traffic']] +=1
-
-
-test = roads[:10]
-    
-ls = shp.geometry.LineString(polyline.decode(all_trips[100]['directions'][0]['overview_polyline']['points']))
-
-
-poly = polyline.decode(all_trips[100]['directions'][0]['overview_polyline']['points'])
-poly = [t[::-1] for t in poly]
-ls_bool = [shp.geometry.LineString(poly).buffer(10).intersects(i) for i in roads['geometry']]
 
 count=0
 for trip in all_trips:
@@ -410,15 +337,3 @@ for i, row in bike_accs.iterrows():
     roads.loc[roads['geometry_wkt'] == mini.to_wkt(), ['n_accidents']] +=1
     print(roads.loc[roads['geometry_wkt'] == mini.to_wkt(), ['n_accidents']])
     print(f'accident {i} of {len(bike_accs)}')
-    
-    
-df = roads.groupby(['BEZIRK']).sum()
-d = pd.read_pickle("C:/Users/julia/Downloads/nextbike (4).pickle")
-min(bike_trips, key=bike_trips.get)
-
-
-tl=[]
-[tl.append(bike_trips[i]['time']) for i in list(bike_trips.keys())]
-bike_locs_df_final = bike_locs_df_final[(~bike_locs_df_final.time.isin(tl)) & (bike_locs_df_final.day != 24)]
-
-max(tl)
