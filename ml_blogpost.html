@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+<style>
+  div.csl-bib-body { }
+  div.csl-entry {
+    clear: both;
+    }
+  .hanging div.csl-entry {
+    margin-left:2em;
+    text-indent:-2em;
+  }
+  div.csl-left-margin {
+    min-width:2em;
+    float:left;
+  }
+  div.csl-right-inline {
+    margin-left:2em;
+    padding-left:1em;
+  }
+  div.csl-indent {
+    margin-left: 2em;
+  }
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>The key drivers of bicycle accidents in Berlin</title>
+
+  <meta property="description" itemprop="description" content="In this blogpost, we present a machine learning approach to predicting injury severity and accident likelihood of bicycle accidents in Berlin. This article was highly inspired by the final report of the project with the same name."/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2022-05-10"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-05-10"/>
+  <meta name="article:author" content="Anna Deniz"/>
+  <meta name="article:author" content="Julian Kath"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="The key drivers of bicycle accidents in Berlin"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="In this blogpost, we present a machine learning approach to predicting injury severity and accident likelihood of bicycle accidents in Berlin. This article was highly inspired by the final report of the project with the same name."/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="The key drivers of bicycle accidents in Berlin"/>
+  <meta property="twitter:description" content="In this blogpost, we present a machine learning approach to predicting injury severity and accident likelihood of bicycle accidents in Berlin. This article was highly inspired by the final report of the project with the same name."/>
+
+  <!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=Imbalanced classification with python: Better metrics, balance skewed classes, cost-sensitive learning;citation_publication_date=2020;citation_publisher=Machine Learning Mastery;citation_author=Jason Brownlee"/>
+  <meta name="citation_reference" content="citation_title=Bike-share flows in berlin;citation_publication_date=2019;citation_author=Technologie Stiftung Berlin"/>
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","repository_url","output","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["The key drivers of bicycle accidents in Berlin"]},{"type":"character","attributes":{},"value":["In this blogpost, we present a machine learning approach to predicting injury severity and accident likelihood of bicycle accidents in Berlin. This article was highly inspired by the final report of the project with the same name."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Anna Deniz"]},{"type":"character","attributes":{},"value":["https://github.com/annaccd/"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Julian Kath"]},{"type":"character","attributes":{},"value":["https://github.com/juka19/"]}]}]},{"type":"character","attributes":{},"value":["2022-05-10"]},{"type":"character","attributes":{},"value":["Machine Learning"]},{"type":"character","attributes":{},"value":["https://github.com/annaccd/ml_bikeaccidents"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["bibliography.bib"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["bibliography.bib","figures/box_plot_models.png","figures/Calibration_plot_RF_vs_DT.png","figures/confusion_matrix (1).png","figures/confusion_matrix_best_model.png","figures/desc-country.png","figures/desc-major.png","figures/distribution_plot_rugs.png","figures/districts by count.png","figures/feature_importance.png","figures/flowchart.jpg","figures/grid_search_results.png","figures/l_curve.png","figures/lc (1).png","figures/lc_auc_roc (1).png","figures/learning_curve_small (1).png","figures/nextbike_data_coverage.png","figures/prf1-major.png","figures/ROC_plot.png","figures/subset_models_comp.png","figures/tt.png","ml_blogpost_files/anchor-4.2.2/anchor.min.js","ml_blogpost_files/bowser-1.9.3/bowser.min.js","ml_blogpost_files/distill-2.2.21/template.v2.js","ml_blogpost_files/header-attrs-2.14/header-attrs.js","ml_blogpost_files/jquery-3.6.0/jquery-3.6.0.js","ml_blogpost_files/jquery-3.6.0/jquery-3.6.0.min.js","ml_blogpost_files/jquery-3.6.0/jquery-3.6.0.min.map","ml_blogpost_files/popper-2.6.0/popper.min.js","ml_blogpost_files/tippy-6.2.7/tippy-bundle.umd.min.js","ml_blogpost_files/tippy-6.2.7/tippy-light-border.css","ml_blogpost_files/tippy-6.2.7/tippy.css","ml_blogpost_files/tippy-6.2.7/tippy.umd.min.js","ml_blogpost_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="ml_blogpost_files/header-attrs-2.14/header-attrs.js"></script>
+  <script src="ml_blogpost_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="ml_blogpost_files/popper-2.6.0/popper.min.js"></script>
+  <link href="ml_blogpost_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="ml_blogpost_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="ml_blogpost_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="ml_blogpost_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="ml_blogpost_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="ml_blogpost_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="ml_blogpost_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"The key drivers of bicycle accidents in Berlin","description":"In this blogpost, we present a machine learning approach to predicting injury severity and accident likelihood of bicycle accidents in Berlin. This article was highly inspired by the final report of the project with the same name.","authors":[{"author":"Anna Deniz","authorURL":"https://github.com/annaccd/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""},{"author":"Julian Kath","authorURL":"https://github.com/juka19/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-05-10T00:00:00.000+02:00","citationText":"Deniz & Kath, 2022"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>The key drivers of bicycle accidents in Berlin</h1>
+<!--radix_placeholder_categories-->
+<div class="dt-tags">
+<div class="dt=tag">Machine Learning</div>
+</div>
+<!--/radix_placeholder_categories-->
+<p>In this blogpost, we present a machine learning approach to predicting injury severity and accident likelihood of bicycle accidents in Berlin. This article was highly inspired by the final report of the project with the same name.</p>
+</div>
+
+<div class="d-byline">
+  Anna Deniz <a href="https://github.com/annaccd/" class="uri">https://github.com/annaccd/</a> 
+  
+,   Julian Kath <a href="https://github.com/juka19/" class="uri">https://github.com/juka19/</a> 
+  
+<br/>2022-05-10
+</div>
+
+<div class="d-article">
+<h2 id="abstract">Abstract</h2>
+<p>This article is inspired by the research project that aimed to tackle two main questions related to bicycle accidents in Berlin: injury severity prediction and accident likelihood prediction. For the first part, we built a model to predict the injury severity of bicycle accidents based on the circumstances of the accidents. Consequently, we dealt with imbalanced classification tasks that included cost-sensitive methods and multiple data sampling strategies, such as oversampling and random undersampling. In the second phase of the project, we built a machine learning model to predict the probability of having a bicycle accident in Berlin based on location and time of the bicycle trip. This required extensive data processing tasks.</p>
+<p>Results of the first phase of the research suggest that the information on the accident circumstances are not able to explain injury severity sufficiently. Although a lot of assumptions were made to generate negative accidents sampling, the second phase of the project provided us with good predictors. Our conclusion is that bicycle traffic is by far the strongest predictor of accidents given the available project data.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Cycling is an extremely efficient mode of transport. It can be faster than motorised vehicles in rush hours, it is better for the environment, it decreases the pressure on public transportation and it improves the health of those who practise it. We also understand that safety is one of the main issues when discussing cycling as a mode of transport.</p>
+<p>Therefore, we developed this project aiming to predict the key drivers of bicycle accidents in Berlin using multiple approaches and data sets available. Our research project had essentially two main phases. For the first phase, we predicted the injury severity for each bicycle accident, classifying them between light injury and severe injury. For the second phase, we predicted the likelihood of an accident to happen based on time and location, classifying each combination of time and location between dangerous and non-dangerous.</p>
+<p>As we decided to use real data for every step, we encountered a lot of challenges along the way. Namely, not having any data on those involved in the accidents weakened our injury severity predictions and the lack of negative sampling for the accidents required plenty of data engineering to allow for the accident likelihood prediction. Regardless, we did achieve some good results in the predictors and concluded that bicycle traffic is by far the strongest one.</p>
+<p>Given the innovative aspect of this project, our motivation relies on our belief that it could be beneficial for both the public sector and citizens. We also trust that it will collaborate to increase knowledge in the field of urban mobility and assist to promote cycling in Berlin.</p>
+<h2 id="related-work">Related Work</h2>
+<p>The Ideation and Prototyping Lab of the Technologiestiftung Berlin has simulated bike flows in Berlin based on data from bike share providers. As opposed to their approach, we are fetching data solely from the nextbike API, as it is most widely used and the easiest to connect to. Furthermore, in their work, bike trips were simulated with the open street map directions engine, whereas we are using the Google Maps Directions API to get bicycling directions and recalibrate our estimations by the measuring points for bicycle traffic. Their project does not involve any accident prediction.</p>
+<p>The award winning TU Berlin’s ongoing research project “SimRa” collects both data on bicycle accidents and near-accidents as well as bicycle traffic. They have developed a smartphone application that tracks participants bicycling routes and enables them to enter accident and near-accident data. A particular strength of their approach is that they also collect information on the cyclists. Given that the cycling behaviour differs and certainly affects accident probability, this is a very promising approach. A notable weakness of the approach is that the participants are selecting into the research project, which introduces a selection bias. According to the official accident statistics, most bicycle accidents happen in Mitte and in Kreuzberg-Friedrichshain, districts that are considered among the safest by SimRa.</p>
+<h2 id="proposed-method">Proposed Method</h2>
+<p><strong>Injury severity prediction:</strong> Predicting the type of injury in each accident is essentially a classification predictive modelling problem. That is, a predictive modelling problem that involves assigning a class label to each observation. For our problem, an observation is a single accident occurrence and a class label is the type of injury in each accident. Moreover, this is a binary classification problem, as all examples of type of injury belong to one of two classes.</p>
+<p>The original accidents datasets provide us with three distinct types of injury: ‘death,’ ‘heavy injury’ and ‘light injury.’ The types of injury ‘death’ and ‘heavy injury’ were combined into a single injury type, ‘severe injury.’ This operation was necessary given the imbalanced nature of the data. As there are significantly more occurrences of ‘light injury’ accidents, the other two classes had to be combined in order to minimise the effects of the uneven training dataset on the classification models. From a domain knowledge perspective, it was also reasonable to combine the occurrences of ‘death’ and ‘heavy injury’ accidents, as they are the ones which represent a higher safety concern.</p>
+<p>Stating the uneven nature of the classes, this is also an imbalanced classification problem, where the distribution of examples across the classes is not equal. Such classification is also known as rare event prediction . As severe injury bicycle accidents are indeed a rare occurrence in Berlin, the method serves the problem well. Without any further treatment, the distribution of our dataset is 13.49% to 86.51%, with the minority class being ‘severe injury’ and the majority class being ‘light injury.’</p>
+<p>In order to deal with the imbalanced classes, we employed three different approaches. One approach is to employ algorithms that support a cost-sensitive learning approach. While the exact implementation differs, the general approach is that misclassifications of the minority class are penalized heavier than from the majority class. The other two approaches involve the sampling of the training data. We employed two main sampling methods, over and undersampling. We first implemented a random undersampling and then chose to use the Synthetic Minority Oversampling Technique (SMOTE) for oversampling, which generates minority occurrences by randomly picking a point from the minority class and computing the k-nearest neighbours for this point. One of the advantages of oversampling is that there is no information loss with the technique <span class="citation" data-cites="brownlee2020imbalanced">(<a href="#ref-brownlee2020imbalanced" role="doc-biblioref">Brownlee 2020</a>)</span>.</p>
+<p>As for the models, seven algorithms are being used to train the data, being Logistic Regression; k-Nearest Neighbours; Gaussian NB; Decision Tree; Support Vector Machine; Random Forest and Multinomial NB. Trying different algorithms is also a method to cope with imbalanced classes. Decision trees often have a good performance <span class="citation" data-cites="brownlee2020imbalanced">(<a href="#ref-brownlee2020imbalanced" role="doc-biblioref">Brownlee 2020</a>)</span>, and we see in our results that this is indeed the case for us.</p>
+<p><strong>Accident likelihood prediction:</strong> The prediction of the likelihood or probability of an accident can be done using multiple approaches. For this research project, we are framing it as a classification problem. More specifically, a binary classification problem. The two classes we are trying to predict are either dangerous or non-dangerous, each being a label for the combination of a specified location and time.</p>
+<p>However, the originality of this research does not come necessarily from the classification models that were implemented, but from the data processing that was required in order to start training the models. Indeed, the data engineering component of the second phase of the project was the most time consuming and required a certain level of abstraction and creativity from the authors.</p>
+<p>For this classification problem, we used two principal predictors for each accident, being the location and the time of occurrence, which is given by hour, day of the week, month and year. The main datasets available, however, only gave us the positive sampling required for predicting the accidents probability. We still needed the negative sampling, and that was our most considerable obstacle.</p>
+<p>During our research, we found two datasets that could aid us in tackling the negative sampling issue. The first one provided us with bicycle traffic data measured around 26 points spread across Berlin. The measured traffic data was stratified by each hour of each day, for the years of 2018, 2019 and 2020. The issue with this data was then not the time granulation, but the location. As the traffic was measured only across 26 specified points, a lot of the real bicycle traffic was missing from it. Additional data was then required at this point.</p>
+<p>The second dataset used for the negative sampling issue was in fact generated specifically for this project. To start, data was retrieved from the API of nextbike, one of the leading rental bike providers in Berlin. The API supplied data from the nextbike rental bicycles registered in the city at the time of retrieval. By deploying a script fetching the API data each 15 minutes on PythonAnywhere, the location coordinates at a given time for each individual bicycle were obtained.</p>
+<p>The nextbike API data enabled us to simulate the traffic of rented nextbike’s bicycles in the city. We did this by sending the subsequent locations of each bicycle to the Google Maps Directions API. We implement this step over Google Maps rather than a different route finding engine, as Google Maps offers dedicated bicycle routing. The API response by Google Maps includes a polyline of the route - a geometric shape - that can be merged with intersecting geometries, like for instance the shapefiles of road segments or districts of Berlin. By doing this for an extended period of time, it is possible to supply bicycle traffic of rental bikes at a high resolution in terms of location and time.</p>
+<p>To get an estimate of the real bicycle traffic, we leveraged the measured bicycle traffic from the 26 measurement points available. By comparing the number of nextbike bicycle traffic along the road segment of the measuring point with the measured bicycle traffic, we were able to compute a scaling factor for each measuring point. We then equally extrapolated time trends from the measured bicycle traffic over month and time of the day at each measuring point. Both the time trends and the scaling factor were then applied to the simulated bicycle traffic at the closest location geometry, imputing bicycle traffic at each location for the relevant time periods. While this methodology introduced a number of additional assumptions on the relationship between measured and simulated rental bicycle traffic, it provided us with a high resolution estimate of bicycle traffic in Berlin, mitigating the negative sampling concern.</p>
+<p>In order to combine both positive and negative samples and calculate the probability of an accident, we assigned both samples to two levels of aggregation of location data. The first one was a road segment data, containing all 42.568 road segments in Berlin. The second level of aggregation data was divided per district, containing all 96 districts in the city in the form of a shapefile. The later level of location aggregation was the one used to train the classification models. The steps used in the data processing stage are simplified in the figure below:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:fig1"></span>
+<img src="figures/flowchart.jpg" alt="Data processing" width="100%" />
+<p class="caption">
+Figure 1: Data processing
+</p>
+</div>
+</div>
+<p>Apart from feeding the models, the data processing steps provided us with some good understanding of the data, as seen in the two figures below, showing the number of nextbike trips per administrative area and the distribution of accident probability by time of the day.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:fig2"></span>
+<img src="figures/districts%20by%20count.png" alt="Districts by count" width="100%" />
+<p class="caption">
+Figure 2: Districts by count
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:fig3"></span>
+<img src="figures/distribution_plot_rugs.png" alt="Distribution of accident probabilities by period of day" width="100%" />
+<p class="caption">
+Figure 3: Distribution of accident probabilities by period of day
+</p>
+</div>
+</div>
+<p>As for the models, we employed algorithms that can be applied for balanced binary classification tasks, as by construction our classes are evenly balanced. The labels were given to a combination of location and time for each new instance of bike trip.</p>
+<p>The models used to train the data were Logistic Regression, Ridge Classifier, Decision Tree, Support Vector Machine and Random Forest. As for the predictors, apart from district, month and time of the day, we also used the area of each district and the simulated nextbike traffic. A Grid Search was implemented for parameter optimization of the Decision Tree Classifier and Confusion Matrix was used to measure the performance of the classifier.</p>
+<h2 id="experiments">Experiments</h2>
+<p><strong>Injury severity prediction:</strong> We chose to employ Receiver Operating Characteristic (ROC) Area Under the Curve (AUC) as an evaluation metric for this experiment. As a ranking metric, ROC is more concerned with the classifier’s ability to separate classes and has no bias toward models that perform well on the majority class at the expense of the minority class <span class="citation" data-cites="brownlee2020imbalanced">(<a href="#ref-brownlee2020imbalanced" role="doc-biblioref">Brownlee 2020</a>)</span>. To evaluate the performance of the different models and configurations, we used a repeated stratified K-fold cross-validation.</p>
+<p>The seven methods used presented widely distinctive performances across the 3 employed approaches chosen to deal with the class imbalance. Generally, the models trained on SMOTE data appear to outperform the others. The best performing models were Random Forest, Support Vector Machine and Decision Tree. Logistic Regression, K-Nearest-Neighbour, Gaussian NB and Multinomial NB had poorer performances.</p>
+<p>The results for this experiment were not as good as we expected. Given the breadth of information on the circumstances of the accident, it appears as though the features can not extensively explain injury severity. One factor is certainly that injury severity is not simply a function of the circumstances of the accident, but may be also explained to a large extent by other characteristics, such as the particularities of the people involved in each accident.</p>
+<p><strong>Accident likelihood prediction:</strong> We chose to employ a number of different evaluation methods. At first, we ran a repeated stratified cross validation with 5 folds and 2 repeats for each of the models, comparing their accuracy. We chose accuracy as the first evaluation metric, as the classification is perfectly balanced.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:fig4"></span>
+<img src="figures/box_plot_models.png" alt="Cross-validated models by accuracy" width="100%" />
+<p class="caption">
+Figure 4: Cross-validated models by accuracy
+</p>
+</div>
+</div>
+<p>We ended up picking the decision tree, as it performed similarly good as the other algorithms and has inherent advantages with respect to the explainability. We then performed a grid search over the parameters of the decision tree classifier to optimise the hyperparameter tuning of the model.</p>
+<p>After training the decision tree model, the classifier achieved a test set accuracy of 74.1%, and notably a precision and recall score of 73.7%. The resulting confusion matrix is plotted below. The scores show that the classifier did not overfit the training data, which is a common problem with decision trees.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:fig5"></span>
+<img src="figures/confusion_matrix_best_model.png" alt="Confusion Matrix" width="100%" />
+<p class="caption">
+Figure 5: Confusion Matrix
+</p>
+</div>
+</div>
+<h2 id="analysis">Analysis</h2>
+<p><strong>Accident likelihood prediction:</strong> Looking into the predictors, it becomes very evident that the measured bicycle traffic is by far the strongest predictor of bicycle accidents, followed by the area and the night-period of time dummy variable. As expected, generally, lower traffic volumes are associated with higher road safety. Interestingly, ‘night’ appears to predict a lower accident risk. Possibly this is because of less traffic of other road participants at that time of the day. The second most important feature, district area size (FLAECHE HA) tends to predict higher accident probabilities, which is also counter intuitive. We believe this is due to a sampling error introduced by the nextbike data, which has a low traffic coverage in those areas, and therefore under-reports the denominator of the probability.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:fig6"></span>
+<img src="figures/feature_importance.png" alt="Feature Importance" width="100%" />
+<p class="caption">
+Figure 6: Feature Importance
+</p>
+</div>
+</div>
+<p>Our priority for this particular classification task was the explainability of the model. In accordance with our motivation, the model results should be interpretable and communicated easily. This is why we only implemented a Logistic Regression, a Ridge classifier and a Decision Tree. To enable a comparison to more complicated models, we also trained a Support Vector Machine and a Random Forest Classifier. From the start, we had a strong preference for a Decision Tree, as it is particularly suited for explaining the interaction of predictors.</p>
+<h2 id="conclusions">Conclusion(s)</h2>
+<p>Our project has tackled two main questions related to bicycle accidents in Berlin: first, we built a model to predict the injury severity of bicycle accidents based on the circumstances of the accidents. While the trained model did not yield very good predictions, we learned more about dealing with imbalanced classification tasks, at the preprocessing and sampling stage, the model selection and implementation stage, and finally the model evaluation stage. In the second phase of the project, we built a machine learning model to predict the probability of having a bicycle accident in Berlin based on location and time of the bicycle trip. This last phase required substantial data engineering to obtain adequate data for the classification task. Main leanings include the retrieval of data from APIs, the online deployment of Python scripts and working with spatial data. With regards to machine learning, we improved our understanding of the required workflow and delved further into model evaluation and tree-based models.</p>
+<p>A primary limitation of the later phase is the data quality. Not only did we not acquire the exact required data for our intended purposes, but there were also various preprocessing steps that introduced strong additional assumptions on the data. Nevertheless, we are confident that our results show the feasibility of spatially and temporally high resolution bike traffic estimation as well as accident prediction based on the bike share provider data. This is why we believe further research should take the limitations regarding the data quality as a starting point and dedicate more time and resources into building a dataset that is both temporally and spatially more granular. Finally, further research should also attempt to take into account detailed information on bicycle-relevant road characteristics, such as bicycle lanes, and also characteristics of those involved in each accident.</p>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>For the data preparation steps, we used code from the Technologiestiftung’s bike-share flows in Berlin analysis <span class="citation" data-cites="Technologiestiftung">(<a href="#ref-Technologiestiftung" role="doc-biblioref">Berlin 2019</a>)</span>. Specifically, we adapted parts of their nextbike API script.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Technologiestiftung" class="csl-entry" role="doc-biblioentry">
+Berlin, Technologie Stiftung. 2019. <span>“Bike-Share Flows in Berlin.”</span> 2019. <a href="https://lab.technologiestiftung-berlin.de/projects/bike-analysis/en/">https://lab.technologiestiftung-berlin.de/projects/bike-analysis/en/</a>.
+</div>
+<div id="ref-brownlee2020imbalanced" class="csl-entry" role="doc-biblioentry">
+Brownlee, Jason. 2020. <em>Imbalanced Classification with Python: Better Metrics, Balance Skewed Classes, Cost-Sensitive Learning</em>. Machine Learning Mastery.
+</div>
+</div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom">
+<h3 id="references">References</h3>
+<div id="references-listing"></div>
+<h3 id="updates-and-corrections">Corrections</h3>
+<p>If you see mistakes or want to suggest changes, please <a href="https://github.com/annaccd/ml_bikeaccidents/issues/new">create an issue</a> on the source repository.</p>
+</div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
