@@ -125,7 +125,7 @@ knitr::include_graphics("figures/feature_importance.png")
 
 Our priority for this particular classification task was the explainability of the model. In accordance with our motivation, the model results should be interpretable and communicated easily. This is why we only implemented a Logistic Regression, a Ridge classifier and a Decision Tree. To enable a comparison to more complicated models, we also trained a Support Vector Machine and a Random Forest Classifier. From the start, we had a strong preference for a Decision Tree, as it is particularly suited for explaining the interaction of predictors.
 
-## Conclusion(s)
+## Conclusions
 
 Our project has tackled two main questions related to bicycle accidents in Berlin: first, we built a model to predict the injury severity of bicycle accidents based on the circumstances of the accidents. While the trained model did not yield very good predictions, we learned more about dealing with imbalanced classification tasks, at the preprocessing and sampling stage, the model selection and implementation stage, and finally the model evaluation stage. In the second phase of the project, we built a machine learning model to predict the probability of having a bicycle accident in Berlin based on location and time of the bicycle trip. This last phase required substantial data engineering to obtain adequate data for the classification task. Main leanings include the retrieval of data from APIs, the online deployment of Python scripts and working with spatial data. With regards to machine learning, we improved our understanding of the required workflow and delved further into model evaluation and tree-based models.
 
