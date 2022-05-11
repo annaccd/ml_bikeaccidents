@@ -52,6 +52,10 @@ The award winning TU Berlin’s ongoing research project “SimRa” collects bo
 
 The original accidents datasets contain three distinct types of injury: 'death', 'heavy injury' and 'light injury'. The types of injury 'death' and 'heavy injury' were combined into a single injury type, 'severe injury'. This operation was necessary given the extremely imbalanced nature of the data. As there are significantly more occurrences of 'light injury' accidents, the other two classes had to be combined in order to minimise the effects of the uneven training dataset on the classification models. From a domain knowledge perspective, it was also reasonable to combine the occurrences of 'death' and 'heavy injury' accidents, as they are the ones which represent a higher safety concern.
 
+```{r fig1, eval = TRUE, echo = FALSE, out.width = '100%', fig.cap = "Class imbalance"}
+knitr::include_graphics("figures/table_injury severity.png")
+```
+
 Stating the uneven nature of the classes, this is also an imbalanced classification problem, where the distribution of examples across the classes is not equal. Such classification is also known as rare event prediction \cite{brownlee2020imbalanced}. As severe injury bicycle accidents are indeed a rare occurrence in Berlin, the method serves the problem well. Without any further treatment, the distribution of our dataset is 13.49% to 86.51%, with the minority class being ‘severe injury’ and the majority class being 'light injury'.
 
 In order to deal with the imbalanced classes, we employed three different approaches. One approach is to employ algorithms that support a cost-sensitive learning approach. While the exact implementation differs, the general approach is that misclassifications of the minority class are penalized heavier than from the majority class. The other two approaches involve the sampling of the training data. We employed two main sampling methods, over and undersampling. We first implemented a random undersampling and then chose to use the Synthetic Minority Oversampling Technique (SMOTE) for oversampling, which generates minority occurrences by randomly picking a point from the minority class and computing the k-nearest neighbours for this point. One of the advantages of oversampling is that there is no information loss with the technique [@brownlee2020imbalanced].
@@ -74,17 +78,17 @@ To get an estimate of the real bicycle traffic, we leveraged the measured bicycl
 
 In order to combine both positive and negative samples and calculate the probability of an accident, we assigned both samples to two levels of aggregation of location data. The first one was road segment data, containing all 42.568 road segments in Berlin. The second level of aggregation data was divided per district, containing all 96 districts in the city in the form of a shapefile. The later level of location aggregation was the one used to train the classification models. The steps used in the data processing stage are simplified in the figure below:
 
-```{r fig1, eval = TRUE, echo = FALSE, out.width = '100%', fig.cap = "Data processing"}
+```{r fig2, eval = TRUE, echo = FALSE, out.width = '100%', fig.cap = "Data processing"}
 knitr::include_graphics("figures/flowchart.jpg")
 ```
 
 Apart from feeding the models, the data processing steps provided us with some good understanding of the data, as seen in the two figures below, showing the number of nextbike trips per administrative area and the distribution of accident probability by time of the day.
 
-```{r fig2, eval = TRUE, echo = FALSE, out.width = '100%', fig.cap = "Districts by count"}
+```{r fig3, eval = TRUE, echo = FALSE, out.width = '100%', fig.cap = "Districts by count"}
 knitr::include_graphics("figures/districts by count.png")
 ```
 
-```{r fig3, eval = TRUE, echo = FALSE, out.width = '100%', fig.cap = "Distribution of accident probabilities by period of day"}
+```{r fig4, eval = TRUE, echo = FALSE, out.width = '100%', fig.cap = "Distribution of accident probabilities by period of day"}
 knitr::include_graphics("figures/distribution_plot_rugs.png")
 ```
 
@@ -102,7 +106,7 @@ The results for this experiment were not as good as we expected. Given the bread
 
 **Accident likelihood prediction:** We chose to employ a number of different evaluation methods. At first, we ran a repeated stratified cross validation with 5 folds and 2 repeats for each of the models, comparing their accuracy. We chose accuracy as the first evaluation metric, as the classification is perfectly balanced.
 
-```{r fig4, eval = TRUE, echo = FALSE, out.width = '100%', fig.cap = "Cross-validated models by accuracy"}
+```{r fig5, eval = TRUE, echo = FALSE, out.width = '100%', fig.cap = "Cross-validated models by accuracy"}
 knitr::include_graphics("figures/box_plot_models.png")
 ```
 
@@ -110,7 +114,7 @@ We ended up picking the decision tree, as it performed similarly good as the oth
 
 After training the decision tree model, the classifier achieved a test set accuracy of 74.1%, and notably a precision and recall score of 73.7%. The resulting confusion matrix is plotted below. The scores show that the classifier did not overfit the training data, which is a common problem with decision trees.
 
-```{r fig5, eval = TRUE, echo = FALSE, out.width = '100%', fig.cap = "Confusion Matrix"}
+```{r fig6, eval = TRUE, echo = FALSE, out.width = '100%', fig.cap = "Confusion Matrix"}
 knitr::include_graphics("figures/confusion_matrix_best_model.png")
 ```
 
@@ -118,7 +122,7 @@ knitr::include_graphics("figures/confusion_matrix_best_model.png")
 
 **Accident likelihood prediction:** Looking into the predictors, it becomes very evident that the measured bicycle traffic is by far the strongest predictor of bicycle accidents, followed by the area and the night-period of time dummy variable. As expected, generally, lower traffic volumes are associated with higher road safety. Interestingly, ‘night’ appears to predict a lower accident risk. Possibly this is because of less traffic of other road participants at that time of the day. The second most important feature, district area size (FLAECHE HA) tends to predict higher accident probabilities, which is also counter intuitive. We believe this is due to a sampling error introduced by the nextbike data, which has a low traffic coverage in those areas, and therefore under-reports the denominator of the probability.
 
-```{r fig6, eval = TRUE, echo = FALSE, out.width = '100%', fig.cap = "Feature Importance"}
+```{r fig7, eval = TRUE, echo = FALSE, out.width = '100%', fig.cap = "Feature Importance"}
 knitr::include_graphics("figures/feature_importance.png")
 ```
 

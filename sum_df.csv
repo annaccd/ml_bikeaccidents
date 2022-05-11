@@ -1,0 +1,538 @@
+﻿;Variable;Outcome;Count;Percent
+0;LAND;11;15304;100,0
+0;BEZ;Mitte;2995;19,57
+1;;Friedrichshain-Kreuzberg;2177;14,23
+2;;Pankow;1716;11,21
+3;;Charlottenburg-Wilmersdorf;1642;10,73
+4;;Tempelhof-Schöneberg;1161;7,59
+5;;Treptow-Köpenick;1107;7,23
+6;;Steglitz-Zehlendorf;1001;6,54
+7;;Neukölln;911;5,95
+8;;Lichtenberg;828;5,41
+9;;Reinickendorf;681;4,45
+10;;Marzahn-Hellersdorf;557;3,64
+11;;Spandau;528;3,45
+0;LOR;Alexanderplatzviertel;261;1,71
+1;;Oranienburger Straße;206;1,35
+2;;Charitéviertel;181;1,18
+3;;Samariterviertel;176;1,15
+4;;Andreasviertel;153;1,0
+5;;Lausitzer Platz;152;0,99
+6;;Reuterkiez;152;0,99
+7;;Rüdigerstraße;144;0,94
+8;;Viktoriapark;143;0,93
+9;;Urbanstraße;139;0,91
+10;;Unter den Linden Nord;136;0,89
+11;;Pankow Zentrum;132;0,86
+12;;Schloßstraße;129;0,84
+13;;Leipziger Straße;126;0,82
+14;;Boxhagener Platz;126;0,82
+15;;Wilhelmstraße;124;0,81
+16;;Arnimplatz;117;0,76
+17;;Mehringplatz;115;0,75
+18;;Moritzplatz;115;0,75
+19;;Oranienplatz;115;0,75
+20;;Arkonaplatz;110;0,72
+21;;Pankow Süd;110;0,72
+22;;Breitscheidplatz;109;0,71
+23;;Falkplatz;109;0,71
+24;;Humboldthain Nordwest;109;0,71
+25;;Gesundbrunnen;108;0,71
+26;;Traveplatz;108;0,71
+27;;Graefekiez;108;0,71
+28;;Friedenau;102;0,67
+29;;Kaiser-Wilhelm-Platz;99;0,65
+30;;Invalidenstraße;98;0,64
+31;;Karl-Marx-Allee;98;0,64
+32;;Dammvorstadt;93;0,61
+33;;Wriezener Bahnhof;93;0,61
+34;;Adlershof West;91;0,59
+35;;Nollendorfplatz;91;0,59
+36;;Niederschönhausen;90;0,59
+37;;Nördlicher Landwehrkanal;88;0,58
+38;;Friedenstraße;87;0,57
+39;;Manteuffelstraße;87;0,57
+40;;Großer Tiergarten;86;0,56
+41;;Heine-Viertel West;85;0,56
+42;;Erich-Weinert-Straße;83;0,54
+43;;Rixdorf;82;0,54
+44;;Unter den Linden Süd;81;0,53
+45;;Dennewitzplatz;81;0,53
+46;;Reinickendorfer Straße;79;0,52
+47;;Helmholtzplatz;79;0,52
+48;;Heine-Viertel Ost;79;0,52
+49;;Mahlsdorf Süd;78;0,51
+50;;Neu-Tempelhof;78;0,51
+51;;Askanischer Platz;78;0,51
+52;;Rathaus Yorckstraße;76;0,5
+53;;Elsenstraße;76;0,5
+54;;Weitlingstraße;75;0,49
+55;;Ernst-Reuter-Platz;75;0,49
+56;;Humannplatz;72;0,47
+57;;Sparrplatz;72;0,47
+58;;Greifswalder Straße;69;0,45
+59;;Teutoburger Platz;68;0,44
+60;;Leopoldplatz;68;0,44
+61;;Zehlendorf Mitte;68;0,44
+62;;Halensee;67;0,44
+63;;Lüneburger Straße;66;0,43
+64;;Rehberge;65;0,42
+65;;Dahlem;65;0,42
+66;;Altstadt Kietz;64;0,42
+67;;Emdener Straße;63;0,41
+68;;Schnellerstraße;62;0,41
+69;;Wannsee;62;0,41
+70;;Bölschestraße;60;0,39
+71;;Wassertorplatz;60;0,39
+72;;Schaperstraße;59;0,39
+73;;Chamissokiez;59;0,39
+74;;Köllnische Vorstadt;57;0,37
+75;;Oberschöneweide West;57;0,37
+76;;Hermsdorf;56;0,37
+77;;Nikolassee;56;0,37
+78;;Weißenseer Spitze;56;0,37
+79;;Scharnweberstraße;56;0,37
+80;;Amtsgerichtsplatz;55;0,36
+81;;Stülerstraße;55;0,36
+82;;Karl-August-Platz;55;0,36
+83;;Reichsstraße;54;0,35
+84;;Volkspark (Rudolf-Wilde-Park);53;0,35
+85;;Hausburgviertel;53;0,35
+86;;Alt-Lietzow;53;0,35
+87;;Sewanstraße;53;0,35
+88;;Elberfelder Straße;53;0,35
+89;;Preußenpark;52;0,34
+90;;Marienfelde Süd;52;0,34
+91;;Schäfersee;52;0,34
+92;;Carl-Schurz-Straße;52;0,34
+93;;Rathausstraße;52;0,34
+94;;Buchholz;51;0,33
+95;;Marzahner Chaussee;51;0,33
+96;;Schillerpromenade;51;0,33
+97;;George-Grosz-Platz;50;0,33
+98;;Donaustraße;50;0,33
+99;;Wittenau Süd;50;0,33
+100;;Grazer Platz;50;0,33
+101;;Bötzowstraße;49;0,32
+102;;Brunnenstraße;49;0,32
+103;;Volkspark Prenzlauer Berg;49;0,32
+104;;Babelsberger Straße;48;0,31
+105;;Wrangelkiez;48;0,31
+106;;Stralauer Kiez;48;0,31
+107;;Waldidyll/Flughafensee;48;0,31
+108;;Humboldthain Süd;47;0,31
+109;;Große-Leege-Straße;47;0,31
+110;;Teichstraße;46;0,3
+111;;Adlershof Ost;46;0,3
+112;;Oberschöneweide Ost;46;0,3
+113;;Komponistenviertel Weißensee;45;0,29
+114;;Reichenberger Straße;44;0,29
+115;;Fennpfuhl West;44;0,29
+116;;Richard-Sorge-Viertel;43;0,28
+117;;Alt-Tegel;43;0,28
+118;;Kollwitzplatz;42;0,27
+119;;Richard-Wagner-Straße;42;0,27
+120;;Rummelsburg;42;0,27
+121;;Alt-Rudow;42;0,27
+122;;Thomasiusstraße;42;0,27
+123;;Spreestadt;42;0,27
+124;;Hakenfelde Nord;41;0,27
+125;;Stephankiez;40;0,26
+126;;Silbersteinstraße;40;0,26
+127;;Schönholz;40;0,26
+128;;Heiligensee;40;0,26
+129;;Dorf Altglienicke;40;0,26
+130;;Soldiner Straße;40;0,26
+131;;Wittenbergplatz/Viktoria-Luise-Platz;39;0,25
+132;;Anton-Saefkow-Park;39;0,25
+133;;Teltower Damm;39;0,25
+134;;Flughafenstraße;39;0,25
+135;;Breitkopfbecken;38;0,25
+136;;Oberfeldstraße;38;0,25
+137;;Körnerstraße;38;0,25
+138;;Karlshorst Nord;38;0,25
+139;;Rathaus Tempelhof;38;0,25
+140;;Baumschulenstraße;37;0,24
+141;;Frohnau;37;0,24
+142;;Glasower Straße;37;0,24
+143;;Augustaplatz;37;0,24
+144;;Kaulsdorf Süd;36;0,24
+145;;Droysenstraße;36;0,24
+146;;Borkumer Straße;36;0,24
+147;;Königin-Elisabeth-Straße;36;0,24
+148;;Köpenick Nord;36;0,24
+149;;Herzbergstraße;36;0,24
+150;;Hindemithplatz;36;0,24
+151;;Westliche Müllerstraße;35;0,23
+152;;Schöneberger Insel;35;0,23
+153;;Fritz-Werner-Straße;35;0,23
+154;;Johannisthal West;34;0,22
+155;;Lützowstraße;34;0,22
+156;;Kietzer Feld/Nachtheide;34;0,22
+157;;Schweizer Viertel;33;0,22
+158;;Schillerpark;33;0,22
+159;;Rüdesheimer Platz;33;0,22
+160;;Lankwitz Kirche;32;0,21
+161;;Thälmannpark;32;0,21
+162;;Parchimer Allee;32;0,21
+163;;Botanischer Garten;32;0,21
+164;;Victoriastadt;32;0,21
+165;;Königsberger Straße;32;0,21
+166;;Heinersdorf;32;0,21
+167;;Buch;31;0,2
+168;;Stadtpark;31;0,2
+169;;Oberhofer Platz;31;0,2
+170;;Karlshorst West;31;0,2
+171;;Savignyplatz;31;0,2
+172;;Bayerischer Platz;31;0,2
+173;;Hauptstraße;31;0,2
+174;;Fichtenberg;31;0,2
+175;;Johannisthal Ost;30;0,2
+176;;Krumme Lanke;30;0,2
+177;;Feuerbachstraße;30;0,2
+178;;Rahnsdorf/Hessenwinkel;30;0,2
+179;;Buschkrugallee Nord;29;0,19
+180;;Springpfuhl;29;0,19
+181;;Wilhelmsaue;29;0,19
+182;;Bismarckallee;28;0,18
+183;;Eisenzahnstraße;28;0,18
+184;;Schloßgarten;28;0,18
+185;;Fennpfuhl Ost;28;0,18
+186;;Zitadellenweg;28;0,18
+187;;Alt-Karow;28;0,18
+188;;Park Ruhwald;28;0,18
+189;;Kaiserin-Augusta-Allee;28;0,18
+190;;Jägerallee;28;0,18
+191;;Landsberger Allee;27;0,18
+192;;Kranzallee;27;0,18
+193;;Adamstraße;27;0,18
+194;;Gartenfelder Straße;27;0,18
+195;;Letteplatz;27;0,18
+196;;Grünau;27;0,18
+197;;Hertzbergplatz;27;0,18
+198;;Köpenicker Landstraße;27;0,18
+199;;Körnerpark;26;0,17
+200;;Winsstraße;26;0,17
+201;;John-Locke-Straße;26;0,17
+202;;Buckow Mitte;26;0,17
+203;;Breite Straße;26;0,17
+204;;Lichterfelde West;25;0,16
+205;;Rennbahnstraße;25;0,16
+206;;Prager Platz;25;0,16
+207;;Biesdorf Süd;25;0,16
+208;;Rathaus Wilmersdorf;25;0,16
+209;;Zehlendorf Süd;25;0,16
+210;;Hansaviertel;25;0,16
+211;;Alt-Biesdorf;25;0,16
+212;;Gropiusstadt Ost;24;0,16
+213;;Gewerbegebiet Köllnische Heide;24;0,16
+214;;Rohrdamm;24;0,16
+215;;Nikolsburger Platz;24;0,16
+216;;Gut Hellersdorf;23;0,15
+217;;Wilhelmsruh;23;0,15
+218;;Conrad-Blenkle-Straße;23;0,15
+219;;Marienhöhe;22;0,14
+220;;Berlepschstraße;22;0,14
+221;;Ludwigkirchplatz;22;0,14
+222;;Staakener Straße;22;0,14
+223;;Zehlendorf Eiche;22;0,14
+224;;Blankenburg;22;0,14
+225;;Klixstraße;22;0,14
+226;;An der Kappe;22;0,14
+227;;Karlshorst Süd;22;0,14
+228;;Tempelhofer Weg;22;0,14
+229;;Kaulsdorf Nord;21;0,14
+230;;Komponistenviertel Lankwitz;21;0,14
+231;;Huttenkiez;21;0,14
+232;;Gustav-Adolf-Straße;21;0,14
+233;;Malchower Weg;21;0,14
+234;;Heidestraße;20;0,13
+235;;Gemeindepark Lankwitz;20;0,13
+236;;Brabanter Platz;20;0,13
+237;;Westhafen;20;0,13
+238;;Hagenplatz;20;0,13
+239;;Waidmannslust;20;0,13
+240;;Alt-Marzahn;19;0,12
+241;;Weberwiese;19;0,12
+242;;Germaniagarten;19;0,12
+243;;Märchenland;19;0,12
+244;;Kettinger Straße/Schillerstraße;19;0,12
+245;;Hirschgarten;19;0,12
+246;;Mahlsdorf Nord;19;0,12
+247;;Bohnsdorf;19;0,12
+248;;Handwerker-Siedlung;19;0,12
+249;;Markelstraße;19;0,12
+250;;Nahariyastraße;19;0,12
+251;;Behaimstraße;19;0,12
+252;;Zittauer Straße;19;0,12
+253;;Forst Grunewald;18;0,12
+254;;Plötzensee;18;0,12
+255;;Binger Straße;18;0,12
+256;;Ziekowstraße/Freie Scholle;18;0,12
+257;;Falkenberg West;18;0,12
+258;;Kaiser-Wilhelm-Straße;18;0,12
+259;;Blumenviertel;18;0,12
+260;;Am Treptower Park Süd;18;0,12
+261;;Thielallee;18;0,12
+262;;Treptower Straße Nord;18;0,12
+263;;Rosenfelder Ring;18;0,12
+264;;Ringkolonnaden;18;0,12
+265;;Eisenacher Straße;17;0,11
+266;;Mittelstraße;17;0,11
+267;;Blankenfelde;17;0,11
+268;;Tegeler Weg;17;0,11
+269;;Orankesee;17;0,11
+270;;Müggelheim;17;0,11
+271;;Freiheit;17;0,11
+272;;Lietzensee;17;0,11
+273;;Kurstraße;16;0,1
+274;;Bergstraße;16;0,1
+275;;Späthsfelde;16;0,1
+276;;Siedlung Kämmereiheide;16;0,1
+277;;Mühlengrund;16;0,1
+278;;Karow Nord;16;0,1
+279;;Jungfernheide;16;0,1
+280;;Fischerhüttenstraße;16;0,1
+281;;Gütersloher Weg;16;0,1
+282;;Lankwitz Süd;16;0,1
+283;;Südende;16;0,1
+284;;Alt-Mahlsdorf;16;0,1
+285;;Marienfelder Allee Nordwest;15;0,1
+286;;Falkenberg Ost;15;0,1
+287;;Flinsberger Platz;15;0,1
+288;;Weinmeisterhornweg;15;0,1
+289;;Leon-Jessel-Platz;15;0,1
+290;;Hansastraße;15;0,1
+291;;Maulbeerallee;15;0,1
+292;;Rollberg;15;0,1
+293;;Havemannstraße;15;0,1
+294;;Adele-Sandrock-Straße;15;0,1
+295;;Vogelviertel Süd;14;0,09
+296;;Kaulsdorf Nord I;14;0,09
+297;;Gewerbegebiet Bitterfelder Straße;14;0,09
+298;;Borsigwalde;14;0,09
+299;;Hüttenweg;14;0,09
+300;;Schütte-Lanz-Straße;14;0,09
+301;;Eldenaer Straße;14;0,09
+302;;Franziusweg/Rohrbachstraße;14;0,09
+303;;Kissinger Straße;14;0,09
+304;;Marienfelde Nordost;14;0,09
+305;;Eiswerder;14;0,09
+306;;Herthaplatz;14;0,09
+307;;Barbarossaplatz;13;0,08
+308;;Dorf Falkenberg;13;0,08
+309;;Weißer See;13;0,08
+310;;Weiße Siedlung;13;0,08
+311;;Magistratsweg;12;0,08
+312;;Lichterfelde Süd;12;0,08
+313;;Lindenhofsiedlung;12;0,08
+314;;Bouchéstraße;12;0,08
+315;;Barnimkiez;12;0,08
+316;;Wuhletalstraße;12;0,08
+317;;Hausotterplatz;12;0,08
+318;;Marzahner Promenade;12;0,08
+319;;Dorf Malchow;12;0,08
+320;;Bucher Forst;12;0,08
+321;;Eichkamp;12;0,08
+322;;Tiefwerder;12;0,08
+323;;Ceciliengärten;12;0,08
+324;;Helle Mitte;11;0,07
+325;;Dannenwalder Weg;11;0,07
+326;;Düppel;11;0,07
+327;;Buckower Ring;11;0,07
+328;;Buschallee;11;0,07
+329;;Messelpark;11;0,07
+330;;Gropiusstadt Nord;11;0,07
+331;;Reinickes Hof;11;0,07
+332;;Landsberger Tor;11;0,07
+333;;Alt-Lichtenrade/Töpchiner Weg;10;0,07
+334;;Rosenthal;10;0,07
+335;;Alte Hellersdorfer Straße;10;0,07
+336;;Zingster Straße West;10;0,07
+337;;Mohriner Allee Nord;10;0,07
+338;;Darbystraße;10;0,07
+339;;Wittenau Nord;10;0,07
+340;;Hasenheide;10;0,07
+341;;Lübecker Straße;10;0,07
+342;;Ackerstraße;10;0,07
+343;;Paul-Hertz-Siedlung;10;0,07
+344;;Fischtal;10;0,07
+345;;Alt-Kaulsdorf;10;0,07
+346;;Messegelände;10;0,07
+347;;Klausenerplatz;10;0,07
+348;;Gleisdreieck;9;0,06
+349;;Stadion Wilmersdorf;9;0,06
+350;;Lübars;9;0,06
+351;;Stralauer Halbinsel;9;0,06
+352;;Bismarckstraße;9;0,06
+353;;Amorbacher Weg;9;0,06
+354;;Horstwalder Straße/Paplitzer Straße;9;0,06
+355;;Germersheimer Platz;9;0,06
+356;;Motardstraße;9;0,06
+357;;Alt-Gatow;9;0,06
+358;;Gropiusstadt Süd;9;0,06
+359;;Alt-Lankwitz;9;0,06
+360;;Waßmannsdorfer Chaussee;9;0,06
+361;;Lübarser Straße;8;0,05
+362;;Frankfurter Allee Süd;8;0,05
+363;;Oberspree;8;0,05
+364;;Mellerbogen;8;0,05
+365;;Hellersdorfer Promenade;8;0,05
+366;;Birnhornweg;8;0,05
+367;;Hundsteinweg;8;0,05
+368;;Tegeler Forst;8;0,05
+369;;Rollbergesiedlung;8;0,05
+370;;Branitzer Platz;8;0,05
+371;;Börnicker Straße;8;0,05
+372;;Groß-Glienicker Weg;7;0,05
+373;;Zingster Straße Ost;7;0,05
+374;;Zillesiedlung;7;0,05
+375;;Buckow West;7;0,05
+376;;Schmöckwitz/Rauchfangswerder;7;0,05
+377;;Tegel Süd;7;0,05
+378;;Waltersdorfer Chaussee Ost;7;0,05
+379;;Am Treptower Park Nord;7;0,05
+380;;Wendenschloß;6;0,04
+381;;Schulenburgpark;6;0,04
+382;;Allende I;6;0,04
+383;;Märkisches Zentrum;6;0,04
+384;;Schlangenbader Straße;6;0,04
+385;;Beusselkiez;6;0,04
+386;;Konradshöhe/Tegelort;6;0,04
+387;;Lietzengraben;6;0,04
+388;;Goerzwerke;6;0,04
+389;;Wohngebiet II;5;0,03
+390;;Schorfheidestraße;5;0,03
+391;;Olympiagelände;5;0,03
+392;;Güterbahnhof Grunewald;5;0,03
+393;;Hindenburgdamm;5;0,03
+394;;Döberitzer Weg;5;0,03
+395;;Allende II;5;0,03
+396;;Hildegardstraße;5;0,03
+397;;Böhlener Straße;5;0,03
+398;;Kölner Viertel;4;0,03
+399;;Marzahn Ost;4;0,03
+400;;Gensinger Straße;4;0,03
+401;;Graetschelsteig;4;0,03
+402;;Goltzstraße;4;0,03
+403;;Frauenviertel;4;0,03
+404;;Weiße Taube;4;0,03
+405;;Kafkastraße;4;0,03
+406;;Hundekehle;4;0,03
+407;;Pillnitzer Weg;4;0,03
+408;;Eckschanze;3;0,02
+409;;Siedlung Ruhleben;3;0,02
+410;;Griesingerstraße;3;0,02
+411;;Kirchstraße;3;0,02
+412;;Humboldtstraße;3;0,02
+413;;Boulevard Kastanienallee;3;0,02
+414;;Dorf Wartenberg;3;0,02
+415;;Hohenschönhausener Straße;3;0,02
+416;;Gelbes Viertel;3;0,02
+417;;Munsterdamm;3;0,02
+418;;Tierpark;3;0,02
+419;;Buckow Ost;3;0,02
+420;;Spindlersfeld;3;0,02
+421;;Imbrosweg;3;0,02
+422;;Kaulsdorf Nord II;2;0,01
+423;;Kladower Damm;2;0,01
+424;;Rotes Viertel;2;0,01
+425;;Wartenberg Süd;2;0,01
+426;;Treuenbrietzener Straße;2;0,01
+427;;Gewerbegebiet Ederstraße;2;0,01
+428;;Zwinglistraße;2;0,01
+429;;Karolinenhof;2;0,01
+430;;An der Tränke;2;0,01
+431;;Wartenberg Nord;1;0,01
+432;;Isenburger Weg;1;0,01
+433;;Schleipfuhl;1;0,01
+434;;Spandauer Straße;1;0,01
+435;;Vogelviertel Nord;1;0,01
+436;;Angerburger Allee;1;0,01
+437;;Flatowallee;1;0,01
+438;;Wittelsbacherstraße;1;0,01
+439;;Wissmannstraße;1;0,01
+440;;Ortolanweg;1;0,01
+441;;Thermometersiedlung;1;0,01
+0;UJAHR;2018;5191;33,92
+1;;2020;5108;33,38
+2;;2019;5005;32,7
+0;UMONAT;6;1976;12,91
+1;;8;1873;12,24
+2;;9;1678;10,96
+3;;7;1595;10,42
+4;;5;1575;10,29
+5;;10;1366;8,93
+6;;4;1264;8,26
+7;;11;1062;6,94
+8;;3;769;5,02
+9;;1;734;4,8
+10;;12;732;4,78
+11;;2;680;4,44
+0;USTUNDE;15;1328;8,68
+1;;16;1299;8,49
+2;;17;1277;8,34
+3;;18;1147;7,49
+4;;8;1128;7,37
+5;;14;1058;6,91
+6;;9;1020;6,66
+7;;13;976;6,38
+8;;7;932;6,09
+9;;12;850;5,55
+10;;19;802;5,24
+11;;11;771;5,04
+12;;10;768;5,02
+13;;20;516;3,37
+14;;6;314;2,05
+15;;21;288;1,88
+16;;22;238;1,56
+17;;23;160;1,05
+18;;5;116;0,76
+19;;0;109;0,71
+20;;1;88;0,58
+21;;2;49;0,32
+22;;3;38;0,25
+23;;4;32;0,21
+0;UWOCHENTAG;wednesday;2698;17,63
+1;;tuesday;2694;17,6
+2;;thursday;2679;17,51
+3;;friday;2425;15,85
+4;;monday;2421;15,82
+5;;saturday;1394;9,11
+6;;sunday;993;6,49
+0;UKATEGORIE;light_injury;13239;86,51
+1;;severe_injury;2065;13,49
+0;UART;crossing;7966;52,05
+1;;other;2377;15,53
+2;;stationary;1856;12,13
+3;;parallel;934;6,1
+4;;ahead;934;6,1
+5;;pedestrian;904;5,91
+6;;oncoming;259;1,69
+7;;lane_right;37;0,24
+8;;obstacle;30;0,2
+9;;lane_left;7;0,05
+0;UTYP1;turn;4677;30,56
+1;;crossing;3996;26,11
+2;;stationary;1968;12,86
+3;;parallel;1747;11,42
+4;;other;1190;7,78
+5;;driving;1077;7,04
+6;;overriding;649;4,24
+0;ULICHTVERH;daylight;12238;79,97
+1;;dark;2213;14,46
+2;;twilight;853;5,57
+0;IstRad;bicycle;15304;100,0
+0;IstPKW;car;10473;68,43
+1;;no_car;4831;31,57
+0;IstFuss;no_pedestrian;14296;93,41
+1;;pedestrian;1008;6,59
+0;IstKrad;no_motorcycle;15016;98,12
+1;;motorcycle;288;1,88
+0;IstGkfz;no_lorry;14967;97,8
+1;;lorry;337;2,2
+0;IstSonstige;no_other;13878;90,68
+1;;other;1426;9,32
+0;USTRZUSTAND;dry;12791;83,58
+1;;wet;2464;16,1
+2;;icy;49;0,32
